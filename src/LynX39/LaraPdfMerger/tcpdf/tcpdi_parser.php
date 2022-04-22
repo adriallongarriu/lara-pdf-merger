@@ -1389,11 +1389,8 @@ class tcpdi_parser {
             if (!isset ($obj[1][1]['/Parent'])) {
                 return false;
             } else {
-                $res = $this->_getPageRotation($obj[1][1]['/Parent']);
-
-                dd($res);
-                
-                if ($res[0] == PDF_TYPE_OBJECT)
+                $res = $this->_getPageRotation($obj[1][1]['/Parent']);                
+                if (isset($res[0]) && $res[0] == PDF_TYPE_OBJECT)
                     return $res[1];
                 return $res;
             }
